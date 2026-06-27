@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Mon École IA — Lycée de Côte d'Ivoire</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="Style.css" >
+ <script src="script.js" defer></script>
+</head>
+<body >
+<!-- ============ VUE CONNEXION ============ -->
+<div class="page wrap">
+  <div class="page-head">
+    <span class="eyebrow"><svg class="ico" viewBox="0 0 24 24"><use href="#i-grad"/></svg> Espace élève</span>
+    <h1 class="display">Bienvenue !</h1>
+    <p>Connecte-toi ou crée un compte pour accéder à tes cours et à ton tuteur IA.</p>
+  </div>
+  <div class="login-card">
+    <div class="auth-tabs">
+      <div class="auth-tab on" id="tabLogin" onclick="switchAuthTab('login')">Se connecter</div>
+      <div class="auth-tab" id="tabRegister" onclick="switchAuthTab('register')">S'inscrire</div>
+    </div>
+    <div id="panelLogin">
+      <div class="login-top"><div class="ava"><svg class="ico" viewBox="0 0 24 24"><use href="#i-backpack"/></svg></div><h2>Connexion élève</h2><p>Entre tes identifiants pour continuer.</p></div>
+      <div class="login-body">
+        <div class="field"><label for="loginId">Identifiant</label><input id="loginId" type="text" placeholder="ex : konan.aya" autocomplete="off"/></div>
+        <div class="field"><label for="loginPwd">Mot de passe</label><input id="loginPwd" type="password" placeholder="••••••••"/></div>
+        <div class="login-err" id="loginErr"></div>
+        <button class="btn btn-orange" id="loginBtn" style="width:100%">Se connecter</button>
+        <div class="hint">Pas encore de compte ? Clique sur «S'inscrire» ci-dessus.</div>
+      </div>
+      <div class="login-foot"><a onclick="enterAsGuest()">Continuer sans compte (invité) →</a></div>
+    </div>
+    <div id="panelRegister" style="display:none">
+      <div class="login-top"><div class="ava"><svg class="ico" viewBox="0 0 24 24"><use href="#i-sparkle-id"/></svg></div><h2>Créer un compte</h2><p>Inscris-toi gratuitement en quelques secondes.</p></div>
+      <div class="login-body">
+        <div class="field"><label for="regName">Prénom &amp; Nom</label><input id="regName" type="text" placeholder="ex : Konan Aya"/></div>
+        <div class="field"><label for="regId">Identifiant (login)</label><input id="regId" type="text" placeholder="ex : konan.aya"/></div>
+        <div class="field"><label for="regPwd">Mot de passe</label><input id="regPwd" type="password" placeholder="Minimum 4 caractères"/></div>
+        <div class="login-err" id="regErr"></div>
+        <div class="login-ok" id="regOk"></div>
+        <button class="btn btn-orange" id="regBtn" style="width:100%">Créer mon compte <svg class="ico" viewBox="0 0 24 24"><use href="#i-arrow-left" transform="rotate(180 12 12)"/></svg></button>
+      </div>
+      <div class="login-foot"><a onclick="enterAsGuest()">Continuer sans compte (invité) →</a></div>
+    </div>
+  </div>
+</div>
+    
+    
+</body>
+    

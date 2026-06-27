@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Mon École IA — Lycée de Côte d'Ivoire</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="Style.css" >
+ <script src="script.js" defer></script>
+</head>
+<body >
+
+       
+    
+    <!-- ============ VUE ACCUEIL ============ -->
+<div class="wrap">
+  <div class="hero">
+    <div class="hero-badge"><svg class="ico" viewBox="0 0 24 24"><use href="#i-flag-ci"/></svg> Programme officiel MENA — Lycée</div>
+    <h1 class="display">Apprends mieux.<br><em>Comprends plus vite.</em></h1>
+    <p>Cours complets du lycée ivoirien (2nde, 1ère, Tle) avec un assistant IA disponible 24h/24.</p>
+    <div class="hero-btns">
+      <button class="btn btn-orange" onclick="go('connexion')">Commencer <svg class="ico" viewBox="0 0 24 24"><use href="#i-arrow-left" transform="rotate(180 12 12)"/></svg></button>
+      <button class="btn btn-ghost" onclick="enterAsGuest()">Essayer en invité</button>
+    </div>
+    <div class="hero-flags">
+      <div class="hero-stat"><strong>2nde A &amp; C</strong><small>Disponibles</small></div>
+      <div class="hero-stat"><strong>6 matières</strong><small>Au programme</small></div>
+      <div class="hero-stat"><strong>IA Akwaba</strong><small>Tuteur intelligent</small></div>
+    </div>
+  </div>
+</div>
+
+<!-- COMMENT ÇA MARCHE (séquence réelle → numéros justifiés) -->
+<section class="section">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow"><svg class="ico" viewBox="0 0 24 24"><use href="#i-wand"/></svg> En 3 étapes</span>
+      <h2 class="display">Comment ça marche</h2>
+      <p>De l'inscription à ta première leçon, en moins d'une minute.</p>
+    </div>
+    <div class="steps-grid">
+      <div class="step-card">
+        <div class="step-num">1</div>
+        <h4>Choisis ta classe</h4>
+        <p>2nde, 1ère ou Terminale, puis ta série (A, C ou D) — le contenu s'adapte automatiquement.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-num">2</div>
+        <h4>Sélectionne une matière</h4>
+        <p>Maths, Physique-Chimie, SVT, Français, Histoire-Géo, Anglais ou Philosophie.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-num">3</div>
+        <h4>Apprends avec Akwaba</h4>
+        <p>Lis le cours, fais les exercices, et demande de l'aide à ton tuteur IA à tout moment.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FONCTIONNALITÉS (non séquentiel → cartes égales) -->
+<section class="section" style="padding-top:0">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow"><svg class="ico" viewBox="0 0 24 24"><use href="#i-sparkle"/></svg> Fonctionnalités</span>
+      <h2 class="display">Tout ce qu'il faut pour réussir</h2>
+      <p>Une plateforme pensée pour les élèves ivoiriens, simple à utiliser, gratuite.</p>
+    </div>
+    <div class="feat-grid">
+      <div class="feat-card">
+        <div class="fc-ico"><svg class="ico" viewBox="0 0 24 24"><use href="#i-book-open"/></svg></div>
+        <h4>Cours complets</h4>
+        <p>Toutes les notions clés du programme officiel MENA, classées par leçon et par chapitre.</p>
+      </div>
+      <div class="feat-card">
+        <div class="fc-ico"><svg class="ico" viewBox="0 0 24 24"><use href="#i-pencil"/></svg></div>
+        <h4>Exercices corrigés</h4>
+        <p>Des exercices pour t'entraîner, avec la possibilité d'en générer de nouveaux à volonté.</p>
+      </div>
+      <div class="feat-card">
+        <div class="fc-ico"><svg class="ico" viewBox="0 0 24 24"><use href="#i-bot"/></svg></div>
+        <h4>Tuteur IA — Akwaba</h4>
+        <p>Pose tes questions à tout moment : Akwaba t'explique sans jamais te donner la réponse toute faite.</p>
+      </div>
+      <div class="feat-card">
+        <div class="fc-ico"><svg class="ico" viewBox="0 0 24 24"><use href="#i-paperclip"/></svg></div>
+        <h4>Photo de ton exercice</h4>
+        <p>Bloqué sur un exercice du cahier ? Joins une photo et demande de l'aide directement.</p>
+      </div>
+      <div class="feat-card">
+        <div class="fc-ico"><svg class="ico" viewBox="0 0 24 24"><use href="#i-mic"/></svg></div>
+        <h4>Question à la voix</h4>
+        <p>Pas envie d'écrire ? Parle directement à Akwaba grâce au micro intégré au chat.</p>
+      </div>
+      <div class="feat-card">
+        <div class="fc-ico"><svg class="ico" viewBox="0 0 24 24"><use href="#i-history"/></svg></div>
+        <h4>Historique sauvegardé</h4>
+        <p>Toutes tes conversations sont gardées en mémoire pour les retrouver quand tu veux.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MATIÈRES AU PROGRAMME -->
+<section class="section" style="padding-top:0">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow"><svg class="ico" viewBox="0 0 24 24"><use href="#i-grad"/></svg> Programme</span>
+      <h2 class="display">Les matières disponibles</h2>
+      <p>Du tronc commun aux matières de spécialité, selon ta série.</p>
+    </div>
+    <div class="subj-preview-grid">
+      <span class="subj-pill" style="--c:var(--orange)"><span class="sp-ico"><svg class="ico" viewBox="0 0 24 24"><use href="#i-divide"/></svg></span>Mathématiques</span>
+      <span class="subj-pill" style="--c:#7048e8"><span class="sp-ico"><svg class="ico" viewBox="0 0 24 24"><use href="#i-flask"/></svg></span>Physique-Chimie</span>
+      <span class="subj-pill" style="--c:#2b8a3e"><span class="sp-ico"><svg class="ico" viewBox="0 0 24 24"><use href="#i-leaf"/></svg></span>SVT</span>
+      <span class="subj-pill" style="--c:var(--green)"><span class="sp-ico"><svg class="ico" viewBox="0 0 24 24"><use href="#i-quill"/></svg></span>Français</span>
+      <span class="subj-pill" style="--c:#1864ab"><span class="sp-ico"><svg class="ico" viewBox="0 0 24 24"><use href="#i-scroll"/></svg></span>Histoire</span>
+      <span class="subj-pill" style="--c:#1864ab"><span class="sp-ico"><svg class="ico" viewBox="0 0 24 24"><use href="#i-globe"/></svg></span>Géographie</span>
+      <span class="subj-pill" style="--c:#c2255c"><span class="sp-ico"><svg class="ico" viewBox="0 0 24 24"><use href="#i-uk"/></svg></span>Anglais</span>
+      <span class="subj-pill" style="--c:#5f3dc4"><span class="sp-ico"><svg class="ico" viewBox="0 0 24 24"><use href="#i-brain"/></svg></span>Philosophie</span>
+    </div>
+  </div>
+</section>
+
+<!-- À PROPOS / CONFIANCE -->
+<section class="about-band">
+  <div class="wrap section">
+    <div class="about-grid">
+      <div>
+        <span class="eyebrow" style="margin-bottom:14px;display:inline-flex"><svg class="ico" viewBox="0 0 24 24"><use href="#i-checkbadge"/></svg> Pourquoi Mon École IA</span>
+        <h2 class="display">Conçu pour les lycéens de Côte d'Ivoire</h2>
+        <p>Mon École IA est une plateforme éducative gratuite, basée sur le programme officiel du Ministère de l'Éducation Nationale et de l'Alphabétisation (MENA). Le contenu de chaque leçon respecte la progression du curriculum, avec des exemples ancrés dans le quotidien ivoirien.</p>
+        <ul class="about-list">
+          <li><svg class="ico" viewBox="0 0 24 24"><use href="#i-check"/></svg> Contenu conforme au programme MENA</li>
+          <li><svg class="ico" viewBox="0 0 24 24"><use href="#i-check"/></svg> Tuteur IA disponible à toute heure, en français</li>
+          <li><svg class="ico" viewBox="0 0 24 24"><use href="#i-check"/></svg> Accessible en mode invité, sans engagement</li>
+          <li><svg class="ico" viewBox="0 0 24 24"><use href="#i-check"/></svg> Toujours gratuit pour les élèves</li>
+        </ul>
+      </div>
+      <div class="about-panel">
+        <div class="about-stat">
+          <div class="as-ico"><svg class="ico" viewBox="0 0 24 24"><use href="#i-book-open"/></svg></div>
+          <div><strong>3 classes</strong><span>2nde, 1ère, Terminale</span></div>
+        </div>
+        <div class="about-stat">
+          <div class="as-ico"><svg class="ico" viewBox="0 0 24 24"><use href="#i-grad"/></svg></div>
+          <div><strong>3 séries</strong><span>A (Littéraire), C &amp; D (Scientifique)</span></div>
+        </div>
+        <div class="about-stat">
+          <div class="as-ico"><svg class="ico" viewBox="0 0 24 24"><use href="#i-bot"/></svg></div>
+          <div><strong>Akwaba</strong><span>Ton tuteur IA, 24h/24 et 7j/7</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA FINAL -->
+<section class="cta-band wrap">
+  <div class="cta-box">
+    <h2 class="display">Prêt à progresser ?</h2>
+    <p>Rejoins les élèves qui apprennent déjà avec Mon École IA — c'est gratuit et ça prend une minute.</p>
+    <div class="hero-btns">
+      <button class="btn" style="background:#fff;color:var(--orange);box-shadow:0 6px 18px rgba(0,0,0,.15)" onclick="go('connexion')">Créer mon compte <svg class="ico" viewBox="0 0 24 24"><use href="#i-arrow-left" transform="rotate(180 12 12)"/></svg></button>
+      <button class="btn btn-ghost" onclick="enterAsGuest()">Essayer en invité</button>
+    </div>
+  </div>
+</section>
+    
+</body>
+    
+    
+    
+ 
