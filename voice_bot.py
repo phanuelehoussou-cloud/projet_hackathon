@@ -4,10 +4,18 @@ import edge_tts
 import asyncio
 import pygame
 import os
+import sys
 import tempfile
 import threading
 import time
 from dotenv import load_dotenv
+
+# Configurer l'encodage de la console sous Windows en UTF-8 pour éviter les UnicodeEncodeError
+if sys.platform == 'win32':
+    if hasattr(sys.stdout, 'reconfigure'):
+        sys.stdout.reconfigure(encoding='utf-8')
+    if hasattr(sys.stderr, 'reconfigure'):
+        sys.stderr.reconfigure(encoding='utf-8')
 
 # Charger les variables d'environnement depuis le fichier .env
 load_dotenv()
@@ -20,7 +28,14 @@ BASE_URL = "https://api.groq.com/openai/v1"
 MODEL    = "llama-3.3-70b-versatile"
 SEUIL_VOIX = 300  # sensibilité micro (augmente si trop sensible)
 
-client = OpenAI(api_key=API_KEY, base_url=BASE_URL)
+DEMO_MODE = False
+if not API_KEY:
+    DEMO_MODE = True
+    print("⚠️  GROQ_API_KEY non définie dans le fichier .env — Mode démo activé.")
+    print("   Pour activer l'IA réelle, ajoutez votre clé dans le fichier .env (GROQ_API_KEY=gsk_...)")
+    client = None
+else:
+    client = OpenAI(api_key=API_KEY, base_url=BASE_URL)
 
 SYSTEM_PROMPT = """Tu es EduIA, un professeur virtuel intelligent dédié aux élèves du système éducatif ivoirien.
 
@@ -167,6 +182,16 @@ def envoyer(question):
         historique.append({"role": "system", "content": SYSTEM_PROMPT})
 
     historique.append({"role": "user", "content": question})
+
+    if DEMO_MODE:
+        demo = (
+            f"Salut ! Je suis Akwaba, ton tuteur IA. "
+            f"Je suis en maintenance pour le moment et je ne peux pas te répondre. "
+            f"En attendant, tu peux lire les cours et faire les exercices. "
+            f"Je serai bientôt de retour pour t'aider !"
+        )
+        historique.append({"role": "assistant", "content": demo})
+        return demo
 
     try:
         response = client.chat.completions.create(model=MODEL, messages=historique)
